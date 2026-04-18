@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana Green Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section hero-section reveal">
+        <div class="container hero-content">
+          <h1>The Greenest Chain on Earth</h1>
+          <p class="hero-subtitle">
+            A visual story of Solana's environmental impact - Earth Day 2026
+          </p>
+          <p class="badge" aria-label="Earth Day Badge">Earth Day 2026</p>
+          <p class="last-updated">
+            Last Updated:
+            <time id="lastUpdated" datetime="">Loading...</time>
+          </p>
+        </div>
+      </section>
+
+      <section class="section intro-section reveal">
+        <div class="container two-column">
+          <div>
+            <p class="pull-quote">
+              "What if a blockchain could be as light on the planet as it is fast?"
+            </p>
+          </div>
+          <div class="body-copy">
+            <p>
+              Solana is a high-performance blockchain designed for speed, scale, and low-cost
+              transactions.
+            </p>
+            <p>
+              As blockchain adoption grows, energy efficiency becomes central to responsible
+              infrastructure and long-term sustainability.
+            </p>
+            <p>
+              This report-style page shows live network throughput and contextual comparisons across
+              energy and carbon impact.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stats-section reveal" aria-label="Key metrics">
+        <div class="container">
+          <h2 class="section-title">By the numbers</h2>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <p class="stat-value" data-counter data-decimals="0" id="tpsMetric">0</p>
+              <p class="stat-label">Current TPS</p>
+              <p class="demo-badge" id="demoDataBadge" hidden>Using demo data</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value" data-counter data-target="0.00051" data-decimals="5">0</p>
+              <p class="stat-label">Energy per tx (Wh)</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value" data-counter data-target="0.00024" data-decimals="5">0</p>
+              <p class="stat-label">CO2 per tx (g)</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value" data-counter data-target="99.9" data-decimals="1" data-suffix="%">0</p>
+              <p class="stat-label">Network Uptime</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="container two-column align-center">
+          <div class="body-copy">
+            <h2 class="section-title">Energy. Reimagined.</h2>
+            <p>
+              Transaction-level energy intensity reveals the structural difference between legacy
+              consensus systems and modern efficient chain design.
+            </p>
+            <p>
+              Solana's architecture keeps per-transaction energy use dramatically low, even at high
+              throughput.
+            </p>
+            <p class="italic-callout">
+              Bitcoin uses 2.2 millionx more energy per transaction
+            </p>
+          </div>
+          <article class="chart-card">
+            <h3>Energy per Transaction (Wh) - Log Scale</h3>
+            <canvas id="energyChart" aria-label="Energy comparison chart"></canvas>
+          </article>
+        </div>
+      </section>
+
+      <section class="section statement-section reveal">
+        <div class="container statement-content">
+          <p>Every transaction on Solana saves the planet a little more.</p>
+          <span>543g CO2 saved per transaction vs Bitcoin</span>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="container two-column align-center reverse-mobile">
+          <article class="chart-card">
+            <h3>CO2 per Transaction (g)</h3>
+            <canvas id="co2Chart" aria-label="CO2 comparison chart"></canvas>
+          </article>
+          <div class="body-copy">
+            <h2 class="section-title">Carbon, by comparison</h2>
+            <p>
+              Carbon intensity per transaction reframes blockchain progress through environmental
+              cost, not just speed and volume.
+            </p>
+            <p>
+              Across major chains, Solana operates with a fraction of the emissions footprint per
+              transaction.
+            </p>
+            <p class="italic-callout">0.00024g CO2 per tx on Solana vs 543g on Bitcoin</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tps-section reveal">
+        <div class="container">
+          <h2 class="section-title center">Live Network Pulse</h2>
+          <p class="section-caption center">
+            Solana processes thousands of transactions every second - updated every 10 seconds
+          </p>
+          <article class="chart-card wide">
+            <canvas id="tpsChart" aria-label="Live TPS chart"></canvas>
+          </article>
+          <p class="source-note">Data sourced from Solana mainnet RPC</p>
+        </div>
+      </section>
+
+      <section class="section impact-section reveal">
+        <div class="container">
+          <h2 class="section-title center italic">Imagine the impact</h2>
+          <p class="saved-counter" id="co2SavedCounter">0 g</p>
+          <p class="section-caption center">
+            grams of CO2 saved vs Bitcoin - per million transactions
+          </p>
+          <div class="facts-row">
+            <p class="fact-pill" id="factText1"></p>
+            <p class="fact-pill" id="factText2"></p>
+            <p class="fact-pill" id="factText3"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>Solana Green Dashboard</p>
+        <p>Built for DEV Weekend Challenge - Earth Day 2026</p>
+        <a href="#" aria-label="GitHub repository link">GitHub</a>
+      </div>
+      <p class="footer-source">
+        Data sources: Solana Foundation, Cambridge Bitcoin Electricity Consumption Index, Ethereum
+        Foundation
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/solana.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
